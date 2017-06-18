@@ -1,0 +1,6 @@
+/***** Front end *****/
+.ibr-team-social a{
+   width: 33.33%;
+   background-color: lightgray;
+   display: inline-block;
+}
