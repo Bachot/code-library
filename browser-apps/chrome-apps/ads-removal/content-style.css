@@ -1,0 +1,27 @@
+html body a[href*="sexy"], 
+html body a[href*="sex"], 
+html body a[href*="porn"],
+html body a[href*="vagina"],
+html body a[href*="penis"],
+html body [id*="M260887"],
+html body .content-kuss {
+	display: none !important;
+	visibility: invisible !important;
+	opacity: 0 !important;
+	height:0 !important;
+}
+/*
+body {
+	display: none;
+}
+body .movies-list-wrap .tab-content > * {
+	display: none!important;
+	visibility: invisible;
+	opacity: 0;
+	height:0;
+}
+body .movies-list-wrap .tab-content #mv-info {
+	display: block !important;
+	opacity: 1;
+}
+*/
