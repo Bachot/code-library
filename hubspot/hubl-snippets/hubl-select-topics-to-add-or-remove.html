@@ -1,0 +1,26 @@
+<!-- 
+/* 
+ ==========================================================================
+ INFORMATION
+ ========================================================================== 
+ * Title     	: HubSpot HUBL | Select topics to add or remove
+ * Description 	: Excluding unwanted or wanted topics in the blog listing using Hubl(Django+Jinja)
+ * Version      : 1.0.0
+ * Author		: Bachot Mpunga
+ *                https://za.linkedin.com/in/bachot-mpunga-bashala-b834191b
+ * Author URI   : bachotdesign.com
+ * Company      : Struto
+                : https://www.struto.co.uk/
+*/
+-->
+{% set targetedTopics = ["featured-blog-header", "press-releases-banner", "featured", "in-the-news-banner"]  %}
+{% for topic in content.topic_list %}
+    {% set function_topic = topic.slug|title|replace("-", " ") %}
+    {% if topic.slug in targetedTopics %}
+         {# Show only topics within targetedTopics array variable #}
+         {# <a class="link-text none" href="{{ group.absolute_url }}/topic/{{ topic.slug }}">{{ function_topic }}</a>{% if not loop.last %},{% endif %} #}
+    {% else %}
+         {# Exlude topics from the targetedTopics array variable #}
+         <a class="link-text none" href="{{ group.absolute_url }}/topic/{{ topic.slug }}">{{ function_topic }}</a>{% if not loop.last %},{% endif %}
+    {% endif %}
+{% endfor %}
