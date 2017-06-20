@@ -1,0 +1,31 @@
+<!-- 
+/* 
+ ==========================================================================
+ INFORMATION
+ ========================================================================== 
+ * Title     	: HubSpot HUBL | Show All Topics
+ * Description 	: Display all topics for a particular blog using Hubl(Django+Jinja)
+ * Version      : 1.0.0
+ * Author		: Bachot Mpunga
+ *                https://za.linkedin.com/in/bachot-mpunga-bashala-b834191b
+ * Author URI   : bachotdesign.com
+ * Company      : Struto
+                : https://www.struto.co.uk/
+*/
+-->
+{% set my_topics = blog_topics('default') %}
+<!-- Display all topics in the particular blog -->
+<ul>
+{% for item in my_topics %}
+<li><a href="{{ group.absolute_url }}/topic/{{item.slug}}">{{ item }}</a></li>
+{% endfor %}
+</ul>
+ 
+ 
+<!-- Display set of amount of topics -->
+{% set my_topics = blog_topics('default', 10) %}
+<ul>
+{% for item in my_topics %}
+<li><a href="{{ group.absolute_url }}/topic/{{item.slug}}">{{ item }}</a></li>
+{% endfor %}
+</ul>
