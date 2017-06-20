@@ -1,0 +1,36 @@
+/* 
+ ==========================================================================
+ INFORMATION
+ ========================================================================== 
+ * Title     	: HubSpot Auto Height Grid Columns
+ * Description 	: Set HubSpot grid auto height columns
+ * Version      : 1.0.0
+ * Author	: Bachot Mpunga
+ *                https://za.linkedin.com/in/bachot-mpunga-bashala-b834191b
+ * Author URI   : bachotdesign.com
+ * Company      : Struto
+                : https://www.struto.co.uk/
+*/
+/*** Auto column HubSpot version ****/
+body .u-same-height__row > .row-fluid-wrapper{
+    display: table;
+}
+body .u-same-height__row > .row-fluid-wrapper > .row-fluid { 
+    display: table-row;
+}
+body .u-same-height__row > .row-fluid-wrapper > .row-fluid:before,
+body .u-same-height__row > .row-fluid-wrapper > .row-fluid:after {
+    display: none;
+}
+body .u-same-height__cell.widget-span {
+    display: table-cell;
+    float: none;
+    vertical-align: top;
+}
+@media(max-width: 767px) {
+    body .u-same-height__row > .row-fluid-wrapper,
+    body .u-same-height__row > .row-fluid-wrapper > .row-fluid,
+    body .u-same-height__cell.widget-span {
+        display: block
+    }
+}
