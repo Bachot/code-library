@@ -1,0 +1,31 @@
+<!-- 
+/* 
+ ==========================================================================
+ INFORMATION
+ ========================================================================== 
+ * Title     	: HubSpot HUBL | Removing unnecessary HubSpot html wrapper
+ * Description 	: Strip out or removing unnecessary HubSpot html wrapper using Hubl(Django+Jinja)
+ * Version      : 1.0.0
+ * Author	: Bachot Mpunga
+ *                https://za.linkedin.com/in/bachot-mpunga-bashala-b834191b
+ * Author URI   : bachotdesign.com
+ * Company      : Struto
+                : https://www.struto.co.uk/
+*/
+-->
+
+<h1>{{ content.name|striptags  }}</h1>
+
+OUTPUT
+------
+
+----> BEFORE
+
+<h2>
+  <span id="hs_cos_wrapper_wizard_module_-2593399333723881124" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="header">
+     My lorem ipsum
+  </span>
+</h2>
+
+-----> AFTER
+<h2>My lorem ipsum</h2>
