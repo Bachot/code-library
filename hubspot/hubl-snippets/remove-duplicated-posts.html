@@ -1,0 +1,32 @@
+<!--
+/* 
+ ==========================================================================
+ INFORMATION
+ ========================================================================== 
+ * Title     	: Removing duplicated posts
+ * Description 	: This script helps you to remove duplicated blog posts 
+                  or anything within an array
+ * Author		: Bachot Mpunga
+ *                https://za.linkedin.com/in/bachot-mpunga-bashala-b834191b
+ * Author URI   : bachotdesign.com
+ 
+  NOTE: This will work perfectly if you pull all posts then it will remove
+        all the duplicated one, it does not work with hubl blog pagination.
+*/
+-->
+<ul>
+{% for content in contents|unique('name') %} 
+    <!--Listing Posts-->
+    <li>
+        <a class="rdp-link" href="{{content.absolute_url}}">
+        <div style="background-image: url('{% if content.post_list_summary_featured_image  %}{{ content.post_list_summary_featured_image }}{% else %} http://mysite.com/my-placeholder-image.png {% endif %}');"></div>
+        <div class="rdp-desc">
+            <h2 class="rdp-title">{{ content.name }}</h2>
+            <div class="rdp-author">
+				By {{ content.blog_post_author.display_name }} - {{ content.publish_date|datetimeformat('%B %d, %Y') }}
+			</div>
+        </div>
+        </a>
+    </li>
+{% endfor %}
+</ul>

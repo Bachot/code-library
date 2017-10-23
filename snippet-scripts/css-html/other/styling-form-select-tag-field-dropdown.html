@@ -1,0 +1,101 @@
+<html class="" lang="en">
+  <head>
+    <script src="https://static.hsstatic.net/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script>
+    <script src="//static.hsappstatic.net/jquery-libs/static-1.4/jquery-migrate/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript">hsjQuery = window['jQuery']</script>
+    <link href="https://static.hsstatic.net/content_shared_assets/static-1.4047/css/public_common.css" rel="stylesheet">
+ 
+    
+    <!-- ADD THIS INTO THE HEAD HTML
+	DEMO LINK: https://codepen.io/bachot/pen/pWPeZz
+	-->
+    <link rel="stylesheet" href="https://cdn2.hubspot.net/hubfs/2040891/struto-dev-cdn/tether-select-hubspot/select-theme-default.css" />
+<script src="https://cdn2.hubspot.net/hubfs/2040891/struto-dev-cdn/tether-select-hubspot/tether.min.js"></script>
+<script src="https://cdn2.hubspot.net/hubfs/2040891/struto-dev-cdn/tether-select-hubspot/select.min.js"></script>
+
+  </head>
+  <body style="background: #7aafc3; max-width: 600px; float: none; margin: 0 auto; margin-top: 5%;">
+    <form>
+      <div class="hs_which_solution_are_you_interested_in field hs-form-field" data-reactid=".hbspt-forms-0.0:$5">
+    
+    <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.0:$5.1"></legend>
+    <div class="input" data-reactid=".hbspt-forms-0.0:$5.$which_solution_are_you_interested_in">
+        <select id="which_solution_are_you_interested_in-9daa6ac0-7369-4276-bb26-40df317163e2_8994" class="hs-input" name="which_solution_are_you_interested_in" data-reactid=".hbspt-forms-0.0:$5.$which_solution_are_you_interested_in.0">
+            <option value="" disabled="" selected="" data-reactid=".hbspt-forms-0.0:$5.$which_solution_are_you_interested_in.0.0">Choose product interest</option>
+            <option value="Product one" data-reactid=".hbspt-forms-0.0:$5.$which_solution_are_you_interested_in.0.1:$Replicator for MS Dynamics NAV">Product one</option>
+            <option value="Product Two" data-reactid=".hbspt-forms-0.0:$5.$which_solution_are_you_interested_in.0.1:$Replicator 5=10">Product Two</option>
+            <option value="Product Three" data-reactid=".hbspt-forms-0.0:$5.$which_solution_are_you_interested_in.0.1:$MS Dynamics CRM - MS Dynamics NAV">Product Three</option>
+            <option value="Other" data-reactid=".hbspt-forms-0.0:$5.$which_solution_are_you_interested_in.0.1:$Other">Other</option>
+        </select>
+    </div>
+</div>
+    </form>
+
+    <script type="text/javascript" src="https://static.hsstatic.net/content_shared_assets/static-1.4047/js/public_common.js"></script>
+    <!--[if lte IE 8]>
+<script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+    <script src="https://js.hsforms.net/forms/v2.js"></script>
+
+    <script type="text/javascript" id="hs-script-loader" async="" defer="" src="http://js.hs-scripts.com/48101.js"></script>
+    <!-- End of HubSpot Analytics Code -->
+    <!-- Do nothing -->
+
+
+<style>
+body .select-target.select-theme-default,
+ {
+    border-style: none;
+    border-color: transparent;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #333;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #c9c9c9;
+    border-radius: 50px;
+    transition: border 300ms ease-in, box-shadow 200ms ease;
+    -webkit-transition: border 300ms ease-in, box-shadow 200ms ease;
+    border-width: 0px;
+}
+</style>
+<script>
+$(function(){
+    $(window).on('load', function(){
+        var media_1024 = window.matchMedia("(min-width: 1024px)"); 
+        if (media_1024.matches){ 
+            $('select').each(function(){
+                new Select({
+                    el: this
+                });
+            });
+         }
+     }); 
+});
+/**
+In case you want to disable this function on touch devices
+**/
+/**
+        function isTouchDevice() {
+            return 'ontouchstart' in document.documentElement;
+        }
+        
+        if (isTouchDevice()) {
+            console.log(true);
+        } else {
+             $('select').each(function(){
+                new Select({
+                    el: this
+                });
+            });
+            console.log(false);
+        }
+**/
+</script>
+  </body>
+</html>

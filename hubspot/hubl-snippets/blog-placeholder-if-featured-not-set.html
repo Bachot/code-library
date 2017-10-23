@@ -1,0 +1,31 @@
+<!--
+/* 
+ ==========================================================================
+ INFORMATION
+ ========================================================================== 
+ * Title     	: Setting a blog post placeholder image
+ * Description 	: Setting a blog post placeholder image if the featured image was not set
+ * Author		: Bachot Mpunga
+ *                https://za.linkedin.com/in/bachot-mpunga-bashala-b834191b
+ * Author URI   : bachotdesign.com
+*/
+-->
+<ul>
+{% for content in contents|unique('name') %} 
+    <!--Listing Posts-->
+    <li>
+        <a class="rdp-link" href="{{content.absolute_url}}">
+		
+		<!-- Setting a blog post placeholder image if the featured image was not set -->
+        <div style="background-image: url('{% if content.post_list_summary_featured_image  %}{{ content.post_list_summary_featured_image }}{% else %} http://mysite.com/my-placeholder-image.png {% endif %}');"></div>
+        
+		<div class="rdp-desc">
+            <h2 class="rdp-title">{{ content.name }}</h2>
+            <div class="rdp-author">
+				By {{ content.blog_post_author.display_name }} - {{ content.publish_date|datetimeformat('%B %d, %Y') }}
+			</div>
+        </div>
+        </a>
+    </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,28 @@
+<!-- Html 
+ Demo link: https://codepen.io/bachot/pen/eGKraZ
+ 
+<img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=YOUR_SITE_LINK&amp;qzone=1&amp;margin=0&amp;size=IMAGE_SIZE_SQUARE&amp;ecc=L" alt="qr code" />
+-->
+<img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=https://www.google.co.za/&amp;qzone=1&amp;margin=0&amp;size=400x400&amp;ecc=L" alt="qr code" />
+
+<!-- HubSpot ****
+*** 1. Custom Module ***
+<img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data={{ widget.url }}&amp;qzone=1&amp;margin=0&amp;size={{ widget.size }}&amp;ecc=L" alt="qr code" />
+
+*** 2. Hubl Variable ***
+{% set url = "https://www.google.co.za/" %}
+{% set size = "400x400" %}
+<img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data={{ url }}&amp;qzone=1&amp;margin=0&amp;size={{ size }}&amp;ecc=L" alt="qr code" />
+
+*** 3. PHP ***
+$url = "https://www.google.co.za/";
+$size = "400x400";
+echo '<img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data='. $url .'&amp;qzone=1&amp;margin=0&amp;size='. $size . '&amp;ecc=L" alt="qr code" />';
+
+*** 4. WordPress ***
+function qr_link_shortcode() {
+    return '<img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=YOUR_SITE_LINK&amp;qzone=1&amp;margin=0&amp;size=IMAGE_SIZE_SQUARE&amp;ecc=L" alt="qr code" />';
+}
+add_shortcode('qr_code', 'qr_link_shortcode');
+/** Then you call it like this [qr_code] **/
+-->

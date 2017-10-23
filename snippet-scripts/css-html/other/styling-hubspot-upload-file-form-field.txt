@@ -1,0 +1,139 @@
+<html class="" lang="en">
+<!-- NOTE:
+  DEMO: https://codepen.io/bachot/pen/jGBXbd
+
+  YOU DON'T HAVE TO COPY THIS HTML. This is for demo only. 
+  This is showing how HubSpot compile its template.
+  Use only the right panels (CSS and JS)
+-->
+
+  <head>
+    <script src="https://static.hsstatic.net/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script>
+    <script src="//static.hsappstatic.net/jquery-libs/static-1.4/jquery-migrate/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript">hsjQuery = window['jQuery']</script>
+    <link href="https://static.hsstatic.net/content_shared_assets/static-1.4047/css/public_common.css" rel="stylesheet">
+      <style>
+    body .ct-file-label span:first-child {
+      height: auto;
+    }
+.hs_cos_wrapper_type_form .hs-form-field input[type="file"]{
+    display:none;
+}
+.hs_cos_wrapper_type_form .hs_upload_your_cv.hs-form-field > label {
+    display: none;
+    cursor: pointer;
+}
+body .ct-file-label {
+    border-style: none;
+    border-color: transparent;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    vertical-align: middle;
+    background-color: #e4e1e1;
+    border: 1px solid #c9c9c9;
+    border-radius: 50px;
+    transition: border 300ms ease-in, box-shadow 200ms ease;
+    -webkit-transition: border 300ms ease-in, box-shadow 200ms ease;
+    border-width: 0px;
+    font-weight: normal;
+}
+label.ct-file-label {
+    padding: 2px;
+    position: relative;
+}
+body .ct-file-label span:first-child {
+    padding: 11px 15px;
+    background-color: lightgray;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 100%;
+    display: inline-block;
+}
+body .ct-file-label .ct-file-name {
+    padding: 4px 10px 0;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 11px;
+}
+body .ct-file-label svg {
+    padding-right: 5px;
+    padding-top: 5px;
+}
+  </style>
+  </head>
+  <body>
+    <form>
+      <div class="hs_upload_your_cv field hs-form-field" data-reactid=".hbspt-forms-0.0:$5">
+        <label class="ct-file-label" placeholder="Enter your Upload your CV" for="upload_your_cv-ff443f14-c917-4580-9591-61ac060be01c_2538" data-reactid=".hbspt-forms-0.0:$5.0" style="display: block;">
+          <span data-reactid=".hbspt-forms-0.0:$5.0.0">
+            Upload your CV
+          </span>
+        </label>
+        <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.0:$5.1"></legend>
+        <div class="input" data-reactid=".hbspt-forms-0.0:$5.$upload_your_cv">
+          
+            <input id="upload_your_cv-ff443f14-c917-4580-9591-61ac060be01c_2538" class="hs-input" type="file" name="upload_your_cv" size="30" data-reactid=".hbspt-forms-0.0:$5.$upload_your_cv.0">
+         
+        </div>
+      </div>
+    </form>
+
+    <script type="text/javascript" src="https://static.hsstatic.net/content_shared_assets/static-1.4047/js/public_common.js"></script>
+    <!--[if lte IE 8]>
+<script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+    <script src="https://js.hsforms.net/forms/v2.js"></script>
+
+    <script type="text/javascript" id="hs-script-loader" async="" defer="" src="http://js.hs-scripts.com/48101.js"></script>
+    <!-- End of HubSpot Analytics Code -->
+    <!-- Do nothing -->
+
+<script>
+function ct_file_upload(){
+    $('.hs-form-field').each(function(){
+          var hs_form_field = $(this);
+          hs_form_field.find('input[type="file"]').parentsUntil(hs_form_field).addClass('ct-file-input-wrap');
+          hs_form_field.find('.ct-file-input-wrap').parent().addClass('ct-file-wrap');
+          $('.hs_cos_wrapper_type_form .hs_upload_your_cv.hs-form-field > label').show();
+    });
+    var ct_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg>';
+    $('body').find('.hs-form-field.ct-file-wrap').each(function(){
+        $(this).find('label span:first-child').prepend(ct_icon);
+        
+        $(this).find('label').addClass('ct-file-label');
+        var ct_wrap = $('<div/>').css({height:0,width:0,'overflow':'hidden'});
+        var ct_file_input = $(this).find('input[type="file"]').wrap(ct_wrap);
+        var ct_label = $(this).find('label');
+        var ct_text;
+
+        ct_label.append('<span class="ct-file-name"></span>');
+        var ct_filename = $(this).find('.ct-file-name');
+       
+        ct_file_input.change(function(){
+             $this = $(this);
+             ct_filename.html($this.val());
+             ct_text = ct_filename.html();
+             ct_text = ct_text.substring(ct_text.lastIndexOf("\\") + 1, ct_text.length);
+             ct_filename.html(ct_text);
+        });
+         
+    });
+}
+$(function(){
+    $(window).on('load', function(){
+        ct_file_upload();    
+    });
+});
+</script>
+  </body>
+</html>

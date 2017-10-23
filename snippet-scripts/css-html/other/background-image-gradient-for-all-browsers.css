@@ -1,0 +1,86 @@
+/** Background image gradient for all browsers IE, EDGE, Chrome, Safari, Opera, Firefox ***/
+/******** CSS ONLY *******/
+/** Gradient ***/
+.my-class {
+  background-image:  -webkit-linear-gradient(270deg, rgba(204, 68, 116, .7), rgba(204, 68, 116, .7) );
+  /* W3C */
+  background-image:  linear-gradient(180deg, rgba(204, 68, 116, .7), rgba(204, 68, 116, .7) );
+  /* Chrome,Safari4+ */
+  background-image: -webkit-gradient(270deg, rgba(204, 68, 116, .7), rgba(204, 68, 116, .7) );
+  /* FF3.6+ */
+  background-image: -moz-linear-gradient(180deg, rgba(204, 68, 116, .7), rgba(204, 68, 116, .7) );
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(180deg, rgba(204, 68, 116, .7), rgba(204, 68, 116, .7) );
+  /* IE6-8 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99353535', endColorstr='#353535',GradientType=0 ); /* IE6-8 */
+}
+/** Gradient with image **/
+.my-class-bg-image-gradient {
+  background-color: #2b9dc0;
+  background-image: url('https://yoursite.com/image.jpg');
+  background-image:  -webkit-linear-gradient(270deg, rgba(43, 157, 192, .85), rgba(43, 157, 192, .85) ), url(https://yoursite.com/image.jpg);
+  /* W3C */
+  background-image:  linear-gradient(180deg, rgba(43, 157, 192, .85), rgba(43, 157, 192, .85) ), url(https://yoursite.com/image.jpg);
+  /* Chrome,Safari4+ */
+  background-image: -webkit-gradient(270deg, rgba(43, 157, 192, .85), rgba(43, 157, 192, .85) ), url(https://yoursite.com/image.jpg);
+  /* FF3.6+ */
+  background-image: -moz-linear-gradient(180deg, rgba(43, 157, 192, .85), rgba(43, 157, 192, .85) ), url(https://yoursite.com/image.jpg);
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(180deg, rgba(43, 157, 192, .85), rgba(43, 157, 192, .85) ), url(https://yoursite.com/image.jpg);
+  /* IE6-8 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#992b9dc0', endColorstr='#2b9dc0',GradientType=0 ); /* IE6-8 */
+}
+
+/*********** CSS WITH HUBL CODE MACRO *************/
+/*
+  Background gradient without image: gradientBG example
+  {#
+   {{ gradientBG(first, second, bg_color) }}
+   {{ gradientBG('rgba(204, 68, 116, .7)', 'rgba(204, 68, 116, .7)', '353535') }}
+   #}
+*/
+/** Gradient ***/
+{% macro gradientBG(first, second, bg_color) %} 
+  background-image:  -webkit-linear-gradient(270deg, {{ first }}, {{ second }} );
+  /* W3C */
+  background-image:  linear-gradient(180deg, {{ first }}, {{ second }} );
+  /* Chrome,Safari4+ */
+  background-image: -webkit-gradient(270deg, {{ first }}, {{ second }} );
+  /* FF3.6+ */
+  background-image: -moz-linear-gradient(180deg, {{ first }}, {{ second }} );
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(180deg, {{ first }}, {{ second }} );
+  /* IE6-8 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99{{bg_color}}', endColorstr='#{{bg_color}}',GradientType=0 ); /* IE6-8 */
+{% endmacro %} 
+.my-class-bg-image-gradient {
+   {{ gradientBG('rgba(204, 68, 116, .7)', 'rgba(204, 68, 116, .7)', '353535') }}
+}
+
+
+/** Gradient with image **/
+/*
+  Background image with gradient: gradientBG_BG_img example
+  {#
+   {{ gradientBG_img(first, second, bg_color, bg_image) }}
+   {{ gradientBG_img('rgba(43, 157, 192, .85)', 'rgba(43, 157, 192, .85)', '2b9dc0', 'https://yoursite.com/image.jpg') }}
+   #}
+*/
+{% macro gradientBG_img(first, second, bg_color, bg_image) %} 
+  background-color: #{{ bg_color }};
+  background-image: url({{ bg_image }});
+  background-image:  -webkit-linear-gradient(270deg, {{ first }}, {{ second }} ), url({{ bg_image }});
+  /* W3C */
+  background-image:  linear-gradient(180deg, {{ first }}, {{ second }} ), url({{ bg_image }});
+  /* Chrome,Safari4+ */
+  background-image: -webkit-gradient(270deg, {{ first }}, {{ second }} ), url({{ bg_image }});
+  /* FF3.6+ */
+  background-image: -moz-linear-gradient(180deg, {{ first }}, {{ second }} ), url({{ bg_image }});
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(180deg, {{ first }}, {{ second }} ), url({{ bg_image }});
+  /* IE6-8 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99{{bg_color}}', endColorstr='#{{bg_color}}',GradientType=0 ); /* IE6-8 */
+{% endmacro %}
+.my-class-bg-image-gradient {
+  {{ gradientBG_img('rgba(43, 157, 192, .85)', 'rgba(43, 157, 192, .85)', '2b9dc0', 'https://yoursite.com/image.jpg') }}
+}
